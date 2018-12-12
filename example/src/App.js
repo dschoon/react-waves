@@ -1,12 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
+import ReactWaves from 'react-waves'
 
-import ExampleComponent from 'react-waves'
+import africa from './audio/africa.mp3';
 
-export default class App extends Component {
+
+export default class App extends React.Component {
   render () {
     return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
+      <div className={'container'}>
+        <ReactWaves
+          audioFile={africa}
+          playing={true}
+          onPosChange={this.onPosChange}
+        />
       </div>
     )
   }
