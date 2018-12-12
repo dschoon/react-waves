@@ -124,14 +124,13 @@ Waveform.propTypes = {
 Waveform.defaultProps = {
   audioFile: '',
   volume: 1,
-  zoom: 20,
+  zoom: 1,
   options: {
     barHeight: 2,
-    barWidth: 3,
     cursorWidth: 0,
     height: 200,
     hideScrollbar: true,
-    progressColor: '#44BDB2',
+    progressColor: '#EC407A',
     responsive: true,
     waveColor: '#D1D6DA',
   },
