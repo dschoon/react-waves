@@ -1,14 +1,28 @@
 {
-  "name": "react-waves",
+  "name": "@dschoon/react-waves",
   "version": "1.0.0",
   "description": "React component wrapper for wavesurfer.js",
   "author": "dschoon",
   "license": "MIT",
-  "repository": "dschoon/react-waves",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dschoon/react-waves"
+  },
+  "bugs": {
+    "url": "https://github.com/dschoon/react-waves/issues"
+  },
   "homepage": "https://dschoon.github.io/react-waves",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "keywords": [
+    "react",
+    "reactjs",
+    "wavesurfer",
+    "audio",
+    "react-component",
+    "component"
+  ],
   "engines": {
     "node": ">=8",
     "npm": ">=5"
