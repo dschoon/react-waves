@@ -14,7 +14,7 @@ Please report any [issues](https://github.com/dschoon/react-waves/issues) you en
 
 ![ReactWaves](example/public/react-waves.jpg)
 
-#####[Demo](https://dschoon.github.io/react-waves/) -- [Example Code](https://github.com/dschoon/react-waves/tree/master/example)
+**[Demo](https://dschoon.github.io/react-waves/)** -- **[Example Code](https://github.com/dschoon/react-waves/tree/master/example)**
  
 
 ## Install
