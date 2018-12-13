@@ -45,7 +45,7 @@ export default class ReactWaves extends React.Component {
   }
 }
 
-Waveform.propTypes = {
+ReactWaves.propTypes = {
   playing: PropTypes.bool,
   pos: PropTypes.number,
   audioFile: (props, propName, componentName) => {
@@ -121,7 +121,7 @@ Waveform.propTypes = {
   })
 };
 
-Waveform.defaultProps = {
+ReactWaves.defaultProps = {
   audioFile: '',
   volume: 1,
   zoom: 1,
