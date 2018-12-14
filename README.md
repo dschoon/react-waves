@@ -2,7 +2,7 @@
 
 React component wrapper for [Wavesurfer v2](http://wavesurfer-js.org)
 
-[![NPM](https://img.shields.io/npm/v/@dschoon/react-waves.svg)](https://www.npmjs.com/package/react-waves) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![CircleCI](https://circleci.com/gh/dschoon/react-waves.svg?style=svg)](https://circleci.com/gh/dschoon/react-waves)
+[![NPM](https://img.shields.io/npm/v/@dschoon/react-waves.svg)](https://www.npmjs.com/package/@dschoon/react-waves) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![CircleCI](https://circleci.com/gh/dschoon/react-waves.svg?style=svg)](https://circleci.com/gh/dschoon/react-waves)
 
 
 Welcome! This component is still a work in progress, and is heavily based off the previous work done in [react-wavesurfer](https://github.com/mspae/react-wavesurfer) by [@mspae](https://github.com/mspae) (and [others]((https://github.com/mspae/react-wavesurfer/graphs/contributors))). After wavesurfer-js released version 2, and the react-wavesurfer projected became unmaintained, I decided that it was safer to start my own version that I had better control over.
