@@ -23,18 +23,25 @@ Please report any [issues](https://github.com/dschoon/react-waves/issues) you en
 npm install --save react-waves
 ```
 
-## Example
+## Basic Example
 
 ```jsx
-import React from 'react'
-import ReactWaves from 'react-waves'
+import React from 'react';
+import ReactWaves from 'react-waves';
 
-import africa from './audio/africa.mp3';
+import africa from '../audio/africa.mp3';
 
-export default class App extends React.Component {
+export default class BasicExample extends React.Component {
+  state = {
+    playing: false
+  };
+
   render () {
     return (
-      <div className={'container'}>
+      <div className={'container example'}>
+        <div className="play button" onClick={() => { this.setState({ playing: !this.state.playing }) }}>
+          { !this.state.playing ? '▶' : '■' }
+        </div>
         <ReactWaves
           audioFile={africa}
           className={'react-waves'}
@@ -49,6 +56,7 @@ export default class App extends React.Component {
           }}
           volume={1}
           zoom={1}
+          playing={this.state.playing}
         />
       </div>
     )
@@ -120,7 +128,6 @@ props = {
     normalize: PropTypes.bool,
     partialRender: PropTypes.bool,
     pixelRatio: PropTypes.number,
-    plugins: PropTypes.array,
     progressColor: PropTypes.string,
     removeMediaElementOnDestroy: PropTypes.bool,
     renderer: PropTypes.object,

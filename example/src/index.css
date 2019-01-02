@@ -1,11 +1,31 @@
 body {
-  margin: 0;
+  margin: 30px 0;
   padding: 0;
   font-family: sans-serif;
 }
 
 .container {
-  margin: 100px auto;
+  position: relative;
+  margin: 0 auto;
   width: 60%;
   padding: 10px;
+}
+
+.header{
+  margin: 30px 0;
+}
+.subheader {
+  font-size: 10px;
+}
+.example {
+  border: 1px solid lightgray;
+}
+
+.button {
+  position: absolute;
+  left: -60px;
+  top: 44%;
+  cursor: pointer;
+  font-size: 34px;
+  filter: hue-rotate(840deg);
 }

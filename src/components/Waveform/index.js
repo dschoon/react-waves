@@ -1,5 +1,6 @@
 import React from 'react';
 import WaveSurfer from 'wavesurfer.js';
+import Microphone from 'wavesurfer.js/src/plugin/microphone';
 
 import {
   registerEvent,
@@ -25,10 +26,29 @@ export default class Waveform extends React.Component {
   }
 
   componentDidMount() {
+    let options = this.props.options;
+
+    if (this.props.micCallback) {
+      options.plugins = [
+        Microphone.create()
+      ];
+    }
+
     this._wavesurfer = WaveSurfer.create({
-      ...this.props.options,
+      ...options,
       container: this.wavesurferEl
     });
+
+    if (this.props.micCallback) {
+      this._wavesurfer.microphone.on('deviceReady', (stream) => {
+        this.props.micCallback({ stream });
+      });
+      this._wavesurfer.microphone.on('deviceError', (error) => {
+        this.props.micCallback({ error });
+      });
+
+      this.props.micCallback({ micInstance: this._wavesurfer.microphone });
+    }
 
     registerEvent(this._wavesurfer, EVENT.AUDIO_PROCESS, pos => {
       let currentTime = Math.ceil(pos);
@@ -44,14 +64,18 @@ export default class Waveform extends React.Component {
     registerEvent(this._wavesurfer, EVENT.READY, () => {
       this.setState({ isReady: true });
 
-      // set initial position
-      seekTo(this._wavesurfer, this.props, this.props.pos);
+      if (!this.props.micCallback) {
+        // set initial position
+        seekTo(this._wavesurfer, this.props, this.props.pos);
+      }
 
       // set initial volume
       this._wavesurfer.setVolume(this.props.volume);
 
-      // set initial playing state
-      this._wavesurfer.play();
+      if (this.props.playing) {
+        // set initial playing state
+        this._wavesurfer.play();
+      }
 
       // set initial zoom
       this._wavesurfer.zoom(this.props.zoom);
@@ -103,6 +127,12 @@ export default class Waveform extends React.Component {
       }
     }
 
+    if (nextProps.playing) {
+      this._wavesurfer.play();
+    } else {
+      this._wavesurfer.pause();
+    }
+
     // update volume
     if (this.props.volume !== nextProps.volume) {
       this._wavesurfer.setVolume(nextProps.volume);
@@ -121,7 +151,7 @@ export default class Waveform extends React.Component {
 
   componentWillUnmount() {
     // unsubscribe all listeners
-    this.wavesurfer.unAll();
+    this._wavesurfer.unAll();
 
     // destroy wavesurfer instance
     this._wavesurfer.destroy();

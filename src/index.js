@@ -11,7 +11,6 @@ export default class ReactWaves extends React.Component {
     super(props);
 
     this.state = {
-      playing: this.props.playing,
       pos: this.props.pos
     };
 
@@ -23,11 +22,8 @@ export default class ReactWaves extends React.Component {
 
     if (this.props.onPosChange) {
       this.props.onPosChange(pos);
-    } else {
-      this.setState({
-        playing: !this.state.playing,
-        pos
-      });
+    } else if (pos !== this.state.pos) {
+      this.setState({ pos });
     }
   }
 
@@ -38,7 +34,7 @@ export default class ReactWaves extends React.Component {
           {...this.props}
           pos={this.state.pos}
           onPosChange={this.onPosChange}
-          playing={this.state.playing}
+          playing={this.props.playing}
         />
       </div>
     )
@@ -105,7 +101,6 @@ ReactWaves.propTypes = {
     normalize: PropTypes.bool,
     partialRender: PropTypes.bool,
     pixelRatio: PropTypes.number,
-    plugins: PropTypes.array,
     progressColor: PropTypes.string,
     removeMediaElementOnDestroy: PropTypes.bool,
     renderer: PropTypes.object,
