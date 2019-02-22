@@ -20,7 +20,7 @@ Please report any [issues](https://github.com/dschoon/react-waves/issues) you en
 ## Install
 
 ```bash
-npm install --save react-waves
+npm install --save @dschoon/react-waves
 ```
 
 ## Basic Example
