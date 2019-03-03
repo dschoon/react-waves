@@ -1,6 +1,6 @@
 {
   "name": "@dschoon/react-waves",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React component wrapper for wavesurfer.js",
   "author": "dschoon",
   "license": "MIT",
@@ -24,8 +24,8 @@
     "component"
   ],
   "engines": {
-    "node": ">=8",
-    "npm": ">=5"
+    "node": ">=6",
+    "yarn": "^0.14.0"
   },
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
@@ -50,7 +50,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
-    "eslint": "5.6.0",
+    "eslint": "5.12.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-import": "^2.13.0",
@@ -70,7 +70,8 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.2",
-    "rollup-plugin-url": "^1.4.0"
+    "rollup-plugin-url": "^1.4.0",
+    "webpack": "4.28.3"
   },
   "files": [
     "dist"

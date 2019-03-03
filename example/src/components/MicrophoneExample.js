@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactWaves from 'react-waves';
+import ReactWaves from '@dschoon/react-waves';
 
 
 export default class MicrophoneExample extends React.Component {
