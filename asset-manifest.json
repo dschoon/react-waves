@@ -1,14 +1,14 @@
 {
-  "main.css": "/react-waves/static/css/main.f732a588.chunk.css",
-  "main.js": "/react-waves/static/js/main.4fb54588.chunk.js",
-  "main.js.map": "/react-waves/static/js/main.4fb54588.chunk.js.map",
-  "static/js/1.daf68147.chunk.js": "/react-waves/static/js/1.daf68147.chunk.js",
-  "static/js/1.daf68147.chunk.js.map": "/react-waves/static/js/1.daf68147.chunk.js.map",
-  "runtime~main.js": "/react-waves/static/js/runtime~main.ef01f6a8.js",
-  "runtime~main.js.map": "/react-waves/static/js/runtime~main.ef01f6a8.js.map",
-  "static/media/africa.mp3": "/react-waves/static/media/africa.5aa39e77.mp3",
-  "static/css/main.f732a588.chunk.css.map": "/react-waves/static/css/main.f732a588.chunk.css.map",
+  "main.css": "/react-waves/static/css/main.54822709.chunk.css",
+  "main.js": "/react-waves/static/js/main.414143b2.chunk.js",
+  "main.js.map": "/react-waves/static/js/main.414143b2.chunk.js.map",
+  "runtime~main.js": "/react-waves/static/js/runtime~main.d0d637db.js",
+  "runtime~main.js.map": "/react-waves/static/js/runtime~main.d0d637db.js.map",
+  "static/js/2.ad8c1afc.chunk.js": "/react-waves/static/js/2.ad8c1afc.chunk.js",
+  "static/js/2.ad8c1afc.chunk.js.map": "/react-waves/static/js/2.ad8c1afc.chunk.js.map",
   "index.html": "/react-waves/index.html",
-  "precache-manifest.51e83f68c00a45e05dafdaa34394f263.js": "/react-waves/precache-manifest.51e83f68c00a45e05dafdaa34394f263.js",
-  "service-worker.js": "/react-waves/service-worker.js"
+  "precache-manifest.07df041b076a7257eb1e146440b4df34.js": "/react-waves/precache-manifest.07df041b076a7257eb1e146440b4df34.js",
+  "service-worker.js": "/react-waves/service-worker.js",
+  "static/css/main.54822709.chunk.css.map": "/react-waves/static/css/main.54822709.chunk.css.map",
+  "static/media/africa.mp3": "/react-waves/static/media/africa.5aa39e77.mp3"
 }
