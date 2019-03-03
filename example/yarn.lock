@@ -852,7 +852,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@dschoon/react-waves@^1.0.2":
+"@dschoon/react-waves@^1.0.x":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@dschoon/react-waves/-/react-waves-1.0.2.tgz#9f696d4d98b6ff54eada50ed4f941edbda85a641"
   integrity sha512-0t52COt+2gHz3ZQ2h4voOcKRPqadoz68OLiHSM/Y8GeTp99lsTK+xAXlUYV32AASfPsTOqoPz5RMbG/0Cfutfw==

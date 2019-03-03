@@ -23,10 +23,6 @@
     "react-component",
     "component"
   ],
-  "engines": {
-    "node": ">=6",
-    "yarn": "^0.14.0"
-  },
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
