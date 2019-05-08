@@ -178,7 +178,7 @@ export default class Waveform extends React.Component {
             this.wavesurferEl = c;
           }}
         />
-        {childrenWithProps}
+        { this._wavesurfer && this.state.isReady && childrenWithProps }
       </div>
     );
   }

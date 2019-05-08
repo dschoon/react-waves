@@ -852,12 +852,9 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@dschoon/react-waves@^1.0.x":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@dschoon/react-waves/-/react-waves-1.0.3.tgz#44f5224f3338349d563bc1f20d5e8ed32060a30a"
-  integrity sha512-2xA2PcLTZyG/aSTLPe+Ci/9tRCqlX9sJ4IcGDI3Z7qQZq3IM1jRWU6wmcv2ATd+6OOnxGzc/leFYL/lwo0Y28A==
-  dependencies:
-    wavesurfer.js "^2.1.1"
+"@dschoon/react-waves@link:..":
+  version "0.0.0"
+  uid ""
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

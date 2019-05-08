@@ -14,6 +14,10 @@ render () {
           <div className={'subheader'}>(Work in progress)</div>
         </div>
         <MicrophoneExample />
+        <div className={'header'}>
+          Regions Example
+          <div className={'subheader'}>(Work in progress)</div>
+        </div>
         <RegionsExample />
       </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactWaves from '@dschoon/react-waves';
+import ReactWaves, { Regions } from '@dschoon/react-waves';
 
 import africa from '../audio/africa.mp3';
 
@@ -15,30 +15,32 @@ export default class MicrophoneExample extends React.Component {
       regions: {
         One: {
           id: 'One',
-          start: 0,
-          end: 3
+          start: 40,
+          end: 60,
+          color: 'rgba(100, 149, 240, 0.3)',
+
+          /*
+           *  Option	Type	    Default	                Description
+           *  ------  ----      -------                 ------------
+           *  id	    string	  random	                The id of the region.
+           *  start	  float	    0	                      The start position of the region (in seconds).
+           *  end	    float	    0	                      The end position of the region (in seconds).
+           *  loop	  boolean	  false	                  Whether to loop the region when played back.
+           *  drag	  boolean	  true	                  Allow/dissallow dragging the region.
+           *  resize	boolean	  true	                  Allow/dissallow resizing the region.
+           *  color	  string	  "rgba(0, 0, 0, 0.1)"	  HTML color code.
+           */
+
         },
         Two: {
           id: 'Two',
-          start: 4,
-          end: 5.25
-        },
-        Three: {
-          id: 'Three',
-          start: 4.75,
-          end: 6.2
+          start: 75,
+          end: 100,
+          color: 'rgba(100, 149, 240, 0.3)',
         }
       }
     };
   }
-
-  regionsCallback = ({ micInstance, stream }) => {
-    if (micInstance) {
-      this.setState({ micInstance });
-    } else if (stream) {
-      this.handleStream(stream);
-    }
-  };
 
   handleSingleRegionUpdate = (e) => {
     const newState = Object.assign(this.state, {

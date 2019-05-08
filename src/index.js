@@ -134,4 +134,5 @@ ReactWaves.defaultProps = {
   playing: false
 };
 
+
 export * from './components/Plugins/regions';
