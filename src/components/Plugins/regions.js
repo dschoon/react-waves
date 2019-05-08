@@ -5,7 +5,7 @@ import { REGIONS_EVENTS, REGION_EVENTS } from '../../models/Events';
 import { capitalizeFirstLetter } from '../../utils/wavesurfer';
 
 
-export class Regions extends React.Component {
+export default class Regions extends React.Component {
 
   componentDidMount() {
     if (this.props.isReady) {
