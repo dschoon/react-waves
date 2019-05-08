@@ -7,7 +7,9 @@ import { positiveIntegerProptype } from './utils/wavesurfer';
 
 import styles from './styles.scss';
 
-export { Regions };
+module.exports = {
+  Regions: Regions
+};
 
 export default class ReactWaves extends React.Component {
   constructor(props) {
