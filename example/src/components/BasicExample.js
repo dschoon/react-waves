@@ -3,6 +3,7 @@ import ReactWaves from '@dschoon/react-waves';
 
 import africa from '../audio/africa.mp3';
 
+
 export default class BasicExample extends React.Component {
   state = {
     playing: false

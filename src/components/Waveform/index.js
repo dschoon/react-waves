@@ -1,6 +1,7 @@
 import React from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import Microphone from 'wavesurfer.js/src/plugin/microphone';
+import Regions from 'wavesurfer.js/src/plugin/regions';
 
 import {
   registerEvent,
@@ -28,10 +29,12 @@ export default class Waveform extends React.Component {
   componentDidMount() {
     let options = this.props.options;
 
+    options.plugins = [
+      Regions.create()
+    ];
+
     if (this.props.micCallback) {
-      options.plugins = [
-        Microphone.create()
-      ];
+      options.plugins.push(Microphone.create());
     }
 
     this._wavesurfer = WaveSurfer.create({
@@ -166,6 +169,7 @@ export default class Waveform extends React.Component {
         })
       )
       : false;
+
     return (
       <div className='waveform'>
         <div

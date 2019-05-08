@@ -14,7 +14,7 @@ export const EVENTS = [
   'seek',
   'volume',
   'waveform-ready',
-  'zoom'
+  'zoom',
 ];
 
 export const EVENT = {
@@ -47,5 +47,29 @@ export const EVENT = {
   // Fires after the waveform is drawn when using the MediaElement backend. If you're using the WebAudio backend, you can use ready.
   WAVEFORM_READY: EVENTS[13],
   // On zooming. Callback will receive (integer) minPxPerSec.
-  ZOOM: EVENTS[14]
+  ZOOM: EVENTS[14],
 };
+
+export const REGIONS_EVENTS = [
+  'region-in',
+  'region-out',
+  'region-removed',
+  'region-updated',
+  'region-mouseenter',
+  'region-mouseleave',
+  'region-click',
+  'region-dblclick',
+  'region-update-end',
+  'region-play',
+];
+
+export const REGION_EVENTS = [
+  'in',
+  'out',
+  'remove',
+  'update',
+  'click',
+  'dbclick',
+  'over',
+  'leave'
+];

@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import Waveform from './components/Waveform'
+import Waveform from './components/Waveform';
 import { positiveIntegerProptype } from './utils/wavesurfer';
-import styles from './styles.scss'
+
+import styles from './styles.scss';
 
 
 export default class ReactWaves extends React.Component {
@@ -132,3 +133,5 @@ ReactWaves.defaultProps = {
   pos: 0,
   playing: false
 };
+
+export * from './components/Plugins/Regions';
