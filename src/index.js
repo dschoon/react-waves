@@ -2,14 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Waveform from './components/Waveform';
-import Regions from './components/Plugins/Regions';
 import { positiveIntegerProptype } from './utils/wavesurfer';
 
 import styles from './styles.scss';
 
-module.exports = {
-  Regions: Regions
-};
 
 export default class ReactWaves extends React.Component {
   constructor(props) {
@@ -137,3 +133,5 @@ ReactWaves.defaultProps = {
   pos: 0,
   playing: false
 };
+
+export * from './components/Plugins/regions';
