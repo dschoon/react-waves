@@ -1,7 +1,7 @@
 import React from 'react';
 import BasicExample from '../components/BasicExample';
 import MicrophoneExample from '../components/MicrophoneExample';
-import RegionsExample from '../components/RegionsExample';
+//import RegionsExample from '../components/RegionsExample';
 
 export default class Home extends React.Component {
 render () {
@@ -14,7 +14,6 @@ render () {
           <div className={'subheader'}>(Work in progress)</div>
         </div>
         <MicrophoneExample />
-        <RegionsExample />
       </div>
     )
   }
