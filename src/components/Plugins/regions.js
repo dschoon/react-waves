@@ -95,10 +95,9 @@ export class Regions extends React.Component {
 
   _hookUpRegionEvents(region) {
     REGION_EVENTS.forEach(e => {
-      const propCallback = this.props[
-        `onSingleRegion${capitalizeFirstLetter(e)}`
-        ];
+      const propCallback = this.props[`onSingleRegion${capitalizeFirstLetter(e)}`];
       const { wavesurfer } = this.props;
+
       if (propCallback) {
         region.on(e, (...originalArgs) => {
           propCallback({

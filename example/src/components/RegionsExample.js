@@ -4,7 +4,7 @@ import ReactWaves, { Regions } from '@dschoon/react-waves';
 import africa from '../audio/africa.mp3';
 
 
-export default class MicrophoneExample extends React.Component {
+export default class RegionsExample extends React.Component {
 
   constructor(props) {
     super(props);
@@ -81,7 +81,19 @@ export default class MicrophoneExample extends React.Component {
         >
           <Regions
             onSingleRegionUpdate={this.handleSingleRegionUpdate}
+            onSingleRegionIn={() => {}}
+            onSingleRegionOut={() => {}}
+            onSingleRegionRemove={() => {}}
+            onSingleRegionClick={() => {}}
+            onSingleRegionOver={() => {}}
+            onSingleRegionLeave={() => {}}
             onRegionClick={this.handleRegionClick}
+            onRegionIn={() => {}}
+            onRegionOut={() => {}}
+            onRegionRemove={() => {}}
+            onRegionDblclick={() => {}}
+            onRegionOver={() => {}}
+            onRegionLeave={() => {}}
             regions={this.state.regions}
           />
         </ReactWaves>

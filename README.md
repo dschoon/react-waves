@@ -14,7 +14,16 @@ Please report any [issues](https://github.com/dschoon/react-waves/issues) you en
 
 ![ReactWaves](example/public/react-waves.jpg)
 
-**[Demo](https://dschoon.github.io/react-waves/)** -- **[Example Code](https://github.com/dschoon/react-waves/tree/master/example)**
+Here's a basic demo and the example code include in this repo:
+- **[Demo](https://dschoon.github.io/react-waves/)**
+- **[Basic Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/BasicExample.js)**
+- **[Microphone Plugin Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/MicrophoneExample.js)**
+- **[Regions Plugin Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/RegionsExample.js)**
+
+Here's an example of the personal project where I'm using this code:
+- **[Clipps](https://clip.ps)** (coming soon)
+- **[Clipps Player Demo](https://dschoon.github.io/clipp-player)**
+- **[Clipps Player Example](https://github.com/dschoon/clipp-player)**
  
 
 ## Install
