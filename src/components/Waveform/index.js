@@ -63,6 +63,18 @@ export default class Waveform extends React.Component {
       }
     });
 
+    registerEvent(this._wavesurfer, EVENT.SEEK, pos => {
+      let duration = this._wavesurfer.getDuration();
+      let currentTime = Math.ceil(duration*pos);
+
+      if (currentTime !== this.props.pos) {
+        this.props.onPosChange({
+          wavesurfer: this._wavesurfer,
+          originalArgs: [currentTime]
+        });
+      }
+    });
+
     // file was loaded, wave was drawn
     registerEvent(this._wavesurfer, EVENT.READY, () => {
       this.setState({ isReady: true });
