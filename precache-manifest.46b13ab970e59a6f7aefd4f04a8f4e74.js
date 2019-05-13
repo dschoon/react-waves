@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/react-waves/static/js/runtime~main.d0d637db.js"
   },
   {
-    "revision": "d7b1055f02945ad2a9fe",
-    "url": "/react-waves/static/js/main.d7b1055f.chunk.js"
+    "revision": "ced5b319ff3d980e0fab",
+    "url": "/react-waves/static/js/main.ced5b319.chunk.js"
   },
   {
     "revision": "76d563188c738b36975b",
     "url": "/react-waves/static/js/2.76d56318.chunk.js"
   },
   {
-    "revision": "d7b1055f02945ad2a9fe",
+    "revision": "ced5b319ff3d980e0fab",
     "url": "/react-waves/static/css/main.4240b8c8.chunk.css"
   },
   {
-    "revision": "2a9d801270cbc5d00fc4fe7e925867a7",
+    "revision": "18fb89393fd18d7fc850339c62ad4790",
     "url": "/react-waves/index.html"
   }
 ];
