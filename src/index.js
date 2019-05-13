@@ -20,11 +20,15 @@ export default class ReactWaves extends React.Component {
 
   onPosChange(e) {
     const pos = e.originalArgs && e.originalArgs[0];
+    const duration = e.wavesurfer && e.wavesurfer.getDuration();
 
     if (this.props.onPosChange) {
-      this.props.onPosChange(pos);
+      this.props.onPosChange(pos, e.wavesurfer);
     } else if (pos !== this.state.pos) {
-      this.setState({ pos });
+      this.setState({
+        pos,
+        duration
+      });
     }
   }
 
