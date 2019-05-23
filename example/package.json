@@ -1,7 +1,7 @@
 {
   "name": "react-waves-example",
   "homepage": "https://dschoon.github.io/react-waves",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "license": "MIT",
   "private": true,
   "dependencies": {

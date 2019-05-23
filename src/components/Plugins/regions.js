@@ -34,7 +34,7 @@ export class Regions extends React.Component {
         delete oldRegions[newRegionId];
 
         // new regions
-        if (!this.props.wavesurfer.regions.list[newRegionId]) {
+        if (!this.props.wavesurfer.regions.list[newRegionId] && nextProps.wavesurfer && nextProps.wavesurfer.addRegion) {
           this._hookUpRegionEvents(nextProps.wavesurfer.addRegion(newRegion));
 
           // update regions
@@ -87,7 +87,7 @@ export class Regions extends React.Component {
 
     // add regions and hook up callbacks to region objects
     for (newRegionId in regions) {
-      if ({}.hasOwnProperty.call(regions, newRegionId)) {
+      if ({}.hasOwnProperty.call(regions, newRegionId) && wavesurfer && wavesurfer.addRegion) {
         this._hookUpRegionEvents(wavesurfer.addRegion(regions[newRegionId]));
       }
     }
