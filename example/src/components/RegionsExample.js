@@ -18,7 +18,6 @@ export default class RegionsExample extends React.Component {
           start: 40,
           end: 60,
           color: 'rgba(100, 149, 240, 0.3)',
-
           /*
            *  Option	Type	    Default	                Description
            *  ------  ----      -------                 ------------
@@ -30,7 +29,6 @@ export default class RegionsExample extends React.Component {
            *  resize	boolean	  true	                  Allow/dissallow resizing the region.
            *  color	  string	  "rgba(0, 0, 0, 0.1)"	  HTML color code.
            */
-
         },
         Two: {
           id: 'Two',
@@ -67,6 +65,8 @@ export default class RegionsExample extends React.Component {
           audioFile={africa}
           className={'react-waves'}
           options={{
+            barGap: 2,
+            barWidth: 1.8,
             barHeight: 2,
             cursorWidth: 0,
             height: 200,

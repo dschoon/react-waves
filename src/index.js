@@ -12,25 +12,24 @@ export default class ReactWaves extends React.Component {
     super(props);
 
     this.state = {
-      pos: this.props.pos
+      pos: this.props.pos,
+      duration: this.props.duration,
     };
-
-    this.onPosChange = this.onPosChange.bind(this);
   }
 
-  onPosChange(e) {
+  onPosChange = (e) => {
     const pos = e.originalArgs && e.originalArgs[0];
     const duration = e.wavesurfer && e.wavesurfer.getDuration();
 
     if (this.props.onPosChange) {
       this.props.onPosChange(pos, e.wavesurfer);
-    } else if (pos !== this.state.pos) {
+    } else if (pos && pos !== this.state.pos) {
       this.setState({
         pos,
         duration
       });
     }
-  }
+  };
 
   render() {
     return (
@@ -38,6 +37,7 @@ export default class ReactWaves extends React.Component {
         <Waveform
           {...this.props}
           pos={this.state.pos}
+          duration={this.state.duration}
           onPosChange={this.onPosChange}
           playing={this.props.playing}
         />
@@ -72,6 +72,7 @@ ReactWaves.propTypes = {
   volume: PropTypes.number,
   zoom: PropTypes.number,
   onPosChange: PropTypes.func,
+  pcmCallback: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
   options: PropTypes.shape({
     audioRate: PropTypes.number,
@@ -126,6 +127,7 @@ ReactWaves.defaultProps = {
   volume: 1,
   zoom: 1,
   options: {
+    barGap: 0,
     barHeight: 2,
     cursorWidth: 0,
     height: 200,

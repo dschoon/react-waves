@@ -74,6 +74,8 @@ export default class MicrophoneExample extends React.Component {
     if (this.state.micInstance.active) {
       this.state.micInstance.stop();
 
+      console.log('stopping');
+
       this.handleAudioOutput().then(({audioBlob, audioUrl}) => {
         this.setState({micRecord: false, audio: audioUrl});
       });

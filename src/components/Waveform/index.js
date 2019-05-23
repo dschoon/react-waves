@@ -28,10 +28,11 @@ export default class Waveform extends React.Component {
 
   componentDidMount() {
     let options = this.props.options;
+    options.plugins = [];
 
-    options.plugins = [
-      Regions.create()
-    ];
+    if (this.props.children && this.props.children.type.name === 'Regions') {
+      options.plugins.push(Regions.create());
+    }
 
     if (this.props.micCallback) {
       options.plugins.push(Microphone.create());
