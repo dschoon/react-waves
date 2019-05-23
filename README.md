@@ -20,7 +20,7 @@ Here's a basic demo and the example code include in this repo:
 - **[Microphone Plugin Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/MicrophoneExample.js)**
 - **[Regions Plugin Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/RegionsExample.js)**
 - **[Large File Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/LargeFilePeaksExample.js)**
-- **[Generate PCM Data Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/GetPeaksExample.js)**
+- **[Generate PCM Data Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/GetPeaksExample.js)** 
 
 Here's an example of the personal project where I'm using this code:
 - **[Clipps](https://clip.ps)** (coming soon)
