@@ -17,6 +17,15 @@ export default class ReactWaves extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+     if (this.props.audioFile && nextProps.audioFile) {
+       this.setState({
+         pos: nextProps.pos,
+         duration: nextProps.duration,
+       })
+     }
+  }
+
   onPosChange = (e) => {
     const pos = e.originalArgs && e.originalArgs[0];
     const duration = e.wavesurfer && e.wavesurfer.getDuration();
@@ -72,7 +81,6 @@ ReactWaves.propTypes = {
   volume: PropTypes.number,
   zoom: PropTypes.number,
   onPosChange: PropTypes.func,
-  pcmCallback: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
   options: PropTypes.shape({
     audioRate: PropTypes.number,
