@@ -57,20 +57,25 @@ export function positiveIntegerProptype(props, propName, componentName) {
 /**
  * @description Receives seconds and transforms this to the position as a float 0-1
  */
-function _secToPos(wavesurfer, sec) {
-  return 1 / wavesurfer.getDuration() * sec;
+function _secToPos(duration, sec) {
+  return 1 / duration * sec;
 }
 
 /**
  * @description Seek to the position (in seconds)
  */
 export function seekTo(wavesurfer, props) {
-  const pos = _secToPos(wavesurfer, props.pos);
+  const duration = wavesurfer.getDuration() || props.duration;
+  const pos = _secToPos(duration, props.pos);
 
-  if (props.autoCenter) {
-    wavesurfer.seekAndCenter(pos);
+  if (pos && !isNaN(pos)) {
+    if (props.autoCenter) {
+      wavesurfer.seekAndCenter(pos);
+    } else {
+      wavesurfer.seekTo(pos);
+    }
   } else {
-    wavesurfer.seekTo(pos);
+    wavesurfer.seekTo(props.pos);
   }
 }
 

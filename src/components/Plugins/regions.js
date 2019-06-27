@@ -5,7 +5,7 @@ import { REGIONS_EVENTS, REGION_EVENTS } from '../../models/Events';
 import { capitalizeFirstLetter } from '../../utils/wavesurfer';
 
 
-export default class Regions extends React.Component {
+export class Regions extends React.Component {
 
   componentDidMount() {
     if (this.props.isReady) {
@@ -34,7 +34,7 @@ export default class Regions extends React.Component {
         delete oldRegions[newRegionId];
 
         // new regions
-        if (!this.props.wavesurfer.regions.list[newRegionId]) {
+        if (!this.props.wavesurfer.regions.list[newRegionId] && nextProps.wavesurfer && nextProps.wavesurfer.addRegion) {
           this._hookUpRegionEvents(nextProps.wavesurfer.addRegion(newRegion));
 
           // update regions
@@ -87,7 +87,7 @@ export default class Regions extends React.Component {
 
     // add regions and hook up callbacks to region objects
     for (newRegionId in regions) {
-      if ({}.hasOwnProperty.call(regions, newRegionId)) {
+      if ({}.hasOwnProperty.call(regions, newRegionId) && wavesurfer && wavesurfer.addRegion) {
         this._hookUpRegionEvents(wavesurfer.addRegion(regions[newRegionId]));
       }
     }
@@ -95,10 +95,9 @@ export default class Regions extends React.Component {
 
   _hookUpRegionEvents(region) {
     REGION_EVENTS.forEach(e => {
-      const propCallback = this.props[
-        `onSingleRegion${capitalizeFirstLetter(e)}`
-        ];
+      const propCallback = this.props[`onSingleRegion${capitalizeFirstLetter(e)}`];
       const { wavesurfer } = this.props;
+
       if (propCallback) {
         region.on(e, (...originalArgs) => {
           propCallback({
