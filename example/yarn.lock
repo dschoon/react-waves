@@ -852,10 +852,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@dschoon/react-waves@1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@dschoon/react-waves/-/react-waves-1.0.14.tgz#b2b6c0cb2565f5669abbc83a21154aa82a67245c"
-  integrity sha512-wUgVmDOQBryWO2ISqriLLZx5YRfDXWkJXNSDKe88ZSLo3QdJSqxIIfYr8bVH97kiKy+XQnCMsTsY0Z7nvHm5yQ==
+"@dschoon/react-waves@1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@dschoon/react-waves/-/react-waves-1.0.15.tgz#e3d00c23bf4414b39025619367ab8ad6928bc130"
+  integrity sha512-3s3egh2iwjOIgPLuZPb93mmWA6UngLILTI9b3y+xXiN9CtTP6qyLbYbGKYFmMeIAAuhMqsVJFPA/zrNky7/Q9w==
   dependencies:
     wavesurfer.js "^2.2.1"
 
@@ -6203,9 +6203,9 @@ mississippi@^3.0.0:
     through2 "^2.0.0"
 
 mixin-deep@^1.2.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.1.tgz#a49e7268dce1a0d9698e45326c5626df3543d0fe"
-  integrity sha512-8ZItLHeEgaqEvd5lYBXfm4EZSFCX29Jb9K+lAHhDKzReKBQKj3R+7NOF6tjqYi9t4oI8VUfaWITJQm86wnXGNQ==
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.2.tgz#1120b43dc359a785dce65b55b82e257ccf479566"
+  integrity sha512-WRoDn//mXBiJ1H40rqa3vH0toePwSsGb45iInWlTySa+Uu4k3tYUSxa2v1KqAiLtvlrSzaExqS1gtk96A9zvEA==
   dependencies:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
