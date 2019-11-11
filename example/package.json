@@ -6,10 +6,10 @@
   "private": true,
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "^2.1.5",
-    "@dschoon/react-waves": "1.0.15"
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-scripts": "^3.1.2",
+    "@dschoon/react-waves": "file:.."
   },
   "scripts": {
     "start": "react-scripts start",

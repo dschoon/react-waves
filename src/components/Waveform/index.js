@@ -2,6 +2,8 @@ import React from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import Microphone from 'wavesurfer.js/src/plugin/microphone';
 import Regions from 'wavesurfer.js/src/plugin/regions';
+import Spectrogram from 'wavesurfer.js/src/plugin/spectrogram';
+import Timeline from '../Plugins/timeline';
 
 import {
   registerEvent,
@@ -27,14 +29,49 @@ export default class Waveform extends React.Component {
   }
 
   componentDidMount() {
-    let options = this.props.options;
+    let { options, spectrogramOptions, timelineOptions } = this.props;
 
     options.plugins = [
-      Regions.create()
+      Regions.create(),
     ];
 
     if (this.props.micCallback) {
       options.plugins.push(Microphone.create());
+    }
+
+    if (spectrogramOptions) {
+      options.plugins.push(Spectrogram.create({
+        container: spectrogramOptions.container,
+        colorMap: spectrogramOptions.colorMap,
+        pixelRatio: spectrogramOptions.pixelRatio,
+        fftSamples: spectrogramOptions.fftSamples,
+        noverlap: spectrogramOptions.noverlap,
+        windowFunc: spectrogramOptions.windowFunc,
+        alpha: spectrogramOptions.alpha,
+        deferInit: spectrogramOptions.deferInit,
+        labels: spectrogramOptions.labels,
+      }));
+    }
+
+    if (timelineOptions) {
+      options.plugins.push(Timeline.create({
+        container: timelineOptions.container,
+        pixelRatio: timelineOptions.pixelRatio,
+        zoomDebounce: timelineOptions.zoomDebounce,
+        height: timelineOptions.height || 50,
+        duration: timelineOptions.duration,
+        notchPercentHeight: timelineOptions.notchPercentHeight,
+        timeInterval: timelineOptions.timeInterval,
+        primaryLabelInterval: timelineOptions.primaryLabelInterval,
+        secondaryLabelInterval: timelineOptions.secondaryLabelInterval,
+        offset: timelineOptions.offset,
+        primaryColor: timelineOptions.primaryColor,
+        fontSize: timelineOptions.fontSize,
+        fontFamily: timelineOptions.fontFamily,
+        primaryFontColor: timelineOptions.primaryFontColor,
+        labelPadding: timelineOptions.labelPadding,
+        unlabeledNotchColor: timelineOptions.unlabeledNotchColor,
+      }));
     }
 
     this._wavesurfer = WaveSurfer.create({
@@ -58,7 +95,7 @@ export default class Waveform extends React.Component {
       if (currentTime !== this.props.pos) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
-          originalArgs: [currentTime]
+          originalArgs: [pos]
         });
       }
     });
@@ -70,7 +107,7 @@ export default class Waveform extends React.Component {
       if (currentTime !== this.props.pos) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
-          originalArgs: [currentTime]
+          originalArgs: [pos]
         });
       }
     });
@@ -81,7 +118,7 @@ export default class Waveform extends React.Component {
 
       if (!this.props.micCallback) {
         // set initial position
-        seekTo(this._wavesurfer, this.props, this.props.pos);
+        seekTo(this._wavesurfer, this.props);
       }
 
       // set initial volume

@@ -21,6 +21,11 @@ body {
   border: 1px solid lightgray;
 }
 
+.zoom-buttons {
+  position: relative;
+  padding: 30px;
+}
+
 .button {
   position: absolute;
   left: -60px;
@@ -28,6 +33,13 @@ body {
   cursor: pointer;
   font-size: 34px;
   filter: hue-rotate(0deg);
+}
+
+.zoom-in {
+  left: 20px;
+}
+.zoom-out {
+  left: 70px;
 }
 
 #audioPeaks {

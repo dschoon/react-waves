@@ -74,7 +74,7 @@ export function seekTo(wavesurfer, props) {
     } else {
       wavesurfer.seekTo(pos);
     }
-  } else {
+  } else if (duration && props.pos) {
     wavesurfer.seekTo(props.pos);
   }
 }

@@ -127,7 +127,9 @@ ReactWaves.propTypes = {
       PropTypes.instanceOf(window.CanvasGradient)
     ]),
     xhr: PropTypes.object,
-  })
+  }),
+  spectrogramOptions: PropTypes.object,
+  timelineOptions: PropTypes.object,
 };
 
 ReactWaves.defaultProps = {
@@ -145,7 +147,7 @@ ReactWaves.defaultProps = {
     waveColor: '#D1D6DA',
   },
   pos: 0,
-  playing: false
+  playing: false,
 };
 
 
