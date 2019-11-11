@@ -1,14 +1,17 @@
 {
-  "main.css": "/react-waves/static/css/main.efa8997f.chunk.css",
-  "main.js": "/react-waves/static/js/main.1b4a756d.chunk.js",
-  "main.js.map": "/react-waves/static/js/main.1b4a756d.chunk.js.map",
-  "runtime~main.js": "/react-waves/static/js/runtime~main.d0d637db.js",
-  "runtime~main.js.map": "/react-waves/static/js/runtime~main.d0d637db.js.map",
-  "static/js/2.e36f6f34.chunk.js": "/react-waves/static/js/2.e36f6f34.chunk.js",
-  "static/js/2.e36f6f34.chunk.js.map": "/react-waves/static/js/2.e36f6f34.chunk.js.map",
-  "index.html": "/react-waves/index.html",
-  "precache-manifest.4f4da60d9e74811bddd54c687e2f322c.js": "/react-waves/precache-manifest.4f4da60d9e74811bddd54c687e2f322c.js",
-  "service-worker.js": "/react-waves/service-worker.js",
-  "static/css/main.efa8997f.chunk.css.map": "/react-waves/static/css/main.efa8997f.chunk.css.map",
-  "static/media/africa.mp3": "/react-waves/static/media/africa.5aa39e77.mp3"
+  "files": {
+    "main.css": "/react-waves/static/css/main.05cfc9a3.chunk.css",
+    "main.js": "/react-waves/static/js/main.3b7785da.chunk.js",
+    "main.js.map": "/react-waves/static/js/main.3b7785da.chunk.js.map",
+    "runtime-main.js": "/react-waves/static/js/runtime-main.6f1bca1c.js",
+    "runtime-main.js.map": "/react-waves/static/js/runtime-main.6f1bca1c.js.map",
+    "static/js/2.d19c650a.chunk.js": "/react-waves/static/js/2.d19c650a.chunk.js",
+    "static/js/2.d19c650a.chunk.js.map": "/react-waves/static/js/2.d19c650a.chunk.js.map",
+    "index.html": "/react-waves/index.html",
+    "precache-manifest.4b5e737574fdaeaa0f5f049678ced5b9.js": "/react-waves/precache-manifest.4b5e737574fdaeaa0f5f049678ced5b9.js",
+    "service-worker.js": "/react-waves/service-worker.js",
+    "static/css/main.05cfc9a3.chunk.css.map": "/react-waves/static/css/main.05cfc9a3.chunk.css.map",
+    "static/media/africa.mp3": "/react-waves/static/media/africa.5aa39e77.mp3",
+    "static/media/demo.wav": "/react-waves/static/media/demo.86e9eec5.wav"
+  }
 }
