@@ -1,17 +1,24 @@
 {
   "files": {
     "main.css": "/react-waves/static/css/main.05cfc9a3.chunk.css",
-    "main.js": "/react-waves/static/js/main.0f92e85a.chunk.js",
-    "main.js.map": "/react-waves/static/js/main.0f92e85a.chunk.js.map",
-    "runtime-main.js": "/react-waves/static/js/runtime-main.6f1bca1c.js",
-    "runtime-main.js.map": "/react-waves/static/js/runtime-main.6f1bca1c.js.map",
-    "static/js/2.7f0b2427.chunk.js": "/react-waves/static/js/2.7f0b2427.chunk.js",
-    "static/js/2.7f0b2427.chunk.js.map": "/react-waves/static/js/2.7f0b2427.chunk.js.map",
+    "main.js": "/react-waves/static/js/main.11d06393.chunk.js",
+    "main.js.map": "/react-waves/static/js/main.11d06393.chunk.js.map",
+    "runtime-main.js": "/react-waves/static/js/runtime-main.0f1cdf48.js",
+    "runtime-main.js.map": "/react-waves/static/js/runtime-main.0f1cdf48.js.map",
+    "static/js/2.d8c03179.chunk.js": "/react-waves/static/js/2.d8c03179.chunk.js",
+    "static/js/2.d8c03179.chunk.js.map": "/react-waves/static/js/2.d8c03179.chunk.js.map",
     "index.html": "/react-waves/index.html",
-    "precache-manifest.fc40b3cf986a01d0e4d06b738d1adac7.js": "/react-waves/precache-manifest.fc40b3cf986a01d0e4d06b738d1adac7.js",
+    "precache-manifest.0e7d1c022cbd05a3e63168b0b3c81078.js": "/react-waves/precache-manifest.0e7d1c022cbd05a3e63168b0b3c81078.js",
     "service-worker.js": "/react-waves/service-worker.js",
     "static/css/main.05cfc9a3.chunk.css.map": "/react-waves/static/css/main.05cfc9a3.chunk.css.map",
+    "static/js/2.d8c03179.chunk.js.LICENSE.txt": "/react-waves/static/js/2.d8c03179.chunk.js.LICENSE.txt",
     "static/media/africa.mp3": "/react-waves/static/media/africa.5aa39e77.mp3",
     "static/media/demo.wav": "/react-waves/static/media/demo.86e9eec5.wav"
-  }
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0f1cdf48.js",
+    "static/js/2.d8c03179.chunk.js",
+    "static/css/main.05cfc9a3.chunk.css",
+    "static/js/main.11d06393.chunk.js"
+  ]
 }

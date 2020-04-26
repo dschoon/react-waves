@@ -1,0 +1,168 @@
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!
+   * wavesurfer.js 3.3.3 (2020-04-16)
+   * https://github.com/katspaugh/wavesurfer.js
+   * @license BSD-3-Clause
+   */
+
+/*! ./ajax */
+
+/*! ./drawer */
+
+/*! ./drawer.canvasentry */
+
+/*! ./drawer.multicanvas */
+
+/*! ./extend */
+
+/*! ./fetch */
+
+/*! ./frame */
+
+/*! ./get-id */
+
+/*! ./max */
+
+/*! ./mediaelement */
+
+/*! ./mediaelement-webaudio */
+
+/*! ./min */
+
+/*! ./observer */
+
+/*! ./peakcache */
+
+/*! ./prevent-click */
+
+/*! ./request-animation-frame */
+
+/*! ./style */
+
+/*! ./util */
+
+/*! ./util/get-id */
+
+/*! ./util/style */
+
+/*! ./webaudio */
+
+/*! debounce */
+
+/*! no static exports found */
+
+/*!***********************!*\
+          !*** ./src/drawer.js ***!
+          \***********************/
+
+/*!*************************!*\
+          !*** ./src/util/max.js ***!
+          \*************************/
+
+/*!*************************!*\
+          !*** ./src/util/min.js ***!
+          \*************************/
+
+/*!*************************!*\
+          !*** ./src/webaudio.js ***!
+          \*************************/
+
+/*!**************************!*\
+          !*** ./src/peakcache.js ***!
+          \**************************/
+
+/*!**************************!*\
+          !*** ./src/util/ajax.js ***!
+          \**************************/
+
+/*!***************************!*\
+          !*** ./src/util/fetch.js ***!
+          \***************************/
+
+/*!***************************!*\
+          !*** ./src/util/frame.js ***!
+          \***************************/
+
+/*!***************************!*\
+          !*** ./src/util/index.js ***!
+          \***************************/
+
+/*!***************************!*\
+          !*** ./src/util/style.js ***!
+          \***************************/
+
+/*!***************************!*\
+          !*** ./src/wavesurfer.js ***!
+          \***************************/
+
+/*!****************************!*\
+          !*** ./src/util/extend.js ***!
+          \****************************/
+
+/*!****************************!*\
+          !*** ./src/util/get-id.js ***!
+          \****************************/
+
+/*!*****************************!*\
+          !*** ./src/mediaelement.js ***!
+          \*****************************/
+
+/*!******************************!*\
+          !*** ./src/util/observer.js ***!
+          \******************************/
+
+/*!***********************************!*\
+          !*** ./src/drawer.canvasentry.js ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/drawer.multicanvas.js ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/util/prevent-click.js ***!
+          \***********************************/
+
+/*!**************************************!*\
+          !*** ./src/mediaelement-webaudio.js ***!
+          \**************************************/
+
+/*!****************************************!*\
+          !*** ./node_modules/debounce/index.js ***!
+          \****************************************/
+
+/*!*********************************************!*\
+          !*** ./src/util/request-animation-frame.js ***!
+          \*********************************************/
+
+/** @license React v0.19.1
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
