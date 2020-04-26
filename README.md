@@ -11,7 +11,7 @@ This component was originally based off of the work done in [react-wavesurfer](h
 To align this component nicer with the base [wavesurfer.js](https://github.com/katspaugh/wavesurfer.js) project, I've decided to skip version 2 and go straight to version 3.
 
 #### Issues
-Please report any [issues](https://github.com/dschoon/react-waves/issues) you encounter and I will try my best to get them fixed. 
+Please report any [issues](https://github.com/dschoon/react-waves/issues) you encounter and I will try my best to get them fixed.
 
 
 ----
@@ -26,13 +26,13 @@ Here's a basic demo and the example code include in this repo:
 - **[Regions Plugin Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/RegionsExample.js)**
 - **[Timeline Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/TimelineExample.js)**
 - **[Large File Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/LargeFilePeaksExample.js)**
-- **[Generate PCM Data Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/GetPeaksExample.js)** 
-- **[Spectrogram Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/SpectrogramExample.js)** 
+- **[Generate PCM Data Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/GetPeaksExample.js)**
+- **[Spectrogram Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/SpectrogramExample.js)**
 
 Here's an example of the personal project where I'm using this code:
 - **[Clipps](https://clip.ps)**
 - **[Clipps Player (Demo)](https://dschoon.github.io/clipp-player)**
- 
+
 
 ## Install
 
@@ -170,6 +170,6 @@ props = {
 
 ## License
 
-MIT © [Dan Schoonmaker](https://danielschoonmaker.com) [(github)](https://github.com/dschoon)
+MIT © [Dan Schoonmaker](https://schoon.me) [(github)](https://github.com/dschoon)
 
-_Last Updated: November 10th, 2019_ 
+_Last Updated: April 26th, 2020_
