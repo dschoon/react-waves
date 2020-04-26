@@ -32,7 +32,10 @@ export default class ReactWaves extends React.Component {
 
     if (this.props.onPosChange) {
       this.props.onPosChange(pos, e.wavesurfer);
-    } else if (pos && pos !== this.state.pos) {
+    }
+
+    // We always update this.state.pos, because it is used for comparison in Waveform's AUDIO_PROCESS event handler
+    if (pos && pos !== this.state.pos) {
       this.setState({
         pos,
         duration

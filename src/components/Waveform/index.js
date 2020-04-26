@@ -91,8 +91,7 @@ export default class Waveform extends React.Component {
     }
 
     registerEvent(this._wavesurfer, EVENT.AUDIO_PROCESS, pos => {
-      let currentTime = Math.ceil(pos);
-      if (currentTime !== this.props.pos) {
+      if (Math.ceil(pos) !== Math.ceil(this.props.pos)) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
           originalArgs: [pos]
@@ -102,9 +101,8 @@ export default class Waveform extends React.Component {
 
     registerEvent(this._wavesurfer, EVENT.SEEK, pos => {
       let duration = this._wavesurfer.getDuration();
-      let currentTime = Math.ceil(duration*pos);
 
-      if (currentTime !== this.props.pos) {
+      if (Math.ceil(duration * pos) !== Math.ceil(this.props.pos)) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
           originalArgs: [pos]
