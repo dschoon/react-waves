@@ -2,22 +2,14 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
+version: 2.1
 jobs:
   build:
+    working_directory: ~/dschoon/react-waves
+
     docker:
     # specify the version you desire here
-    - image: circleci/node:8.12.0
-
-    branches:
-      ignore: /^gh-*/
-
-    # Specify service dependencies here if necessary
-    # CircleCI maintains a library of pre-built images
-    # documented at https://circleci.com/docs/2.0/circleci-images/
-    # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/dschoon/react-waves
+    - image: circleci/node:10.16.3
 
     steps:
       - checkout
@@ -37,7 +29,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      # - run: yarn test
 
       - run: yarn predeploy
 

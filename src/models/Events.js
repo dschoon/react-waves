@@ -68,6 +68,7 @@ export const REGION_EVENTS = [
   'out',
   'remove',
   'update',
+  'update-end',
   'click',
   'dbclick',
   'over',

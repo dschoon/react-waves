@@ -1,17 +1,22 @@
 # ReactWaves
 
-React component wrapper for [Wavesurfer v2](http://wavesurfer-js.org)
+React component wrapper for [Wavesurfer.js](http://wavesurfer-js.org)
 
 [![NPM](https://img.shields.io/npm/v/@dschoon/react-waves.svg)](https://www.npmjs.com/package/@dschoon/react-waves) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![CircleCI](https://circleci.com/gh/dschoon/react-waves.svg?style=svg)](https://circleci.com/gh/dschoon/react-waves)
 
+#### Background
+This component was originally based off of the work done in [react-wavesurfer](https://github.com/mspae/react-wavesurfer) by [@mspae](https://github.com/mspae) (and [others]((https://github.com/mspae/react-wavesurfer/graphs/contributors))). After wavesurfer-js released version 2, and the react-wavesurfer projected became unmaintained, I decided that it was safer to start my own version that I had better control over.
 
-Welcome! This component is still a work in progress, and is heavily based off the previous work done in [react-wavesurfer](https://github.com/mspae/react-wavesurfer) by [@mspae](https://github.com/mspae) (and [others]((https://github.com/mspae/react-wavesurfer/graphs/contributors))). After wavesurfer-js released version 2, and the react-wavesurfer projected became unmaintained, I decided that it was safer to start my own version that I had better control over.
+#### Version 3
+To align this component nicer with the base [wavesurfer.js](https://github.com/katspaugh/wavesurfer.js) project, I've decided to skip version 2 and go straight to version 3.
 
-Please report any [issues](https://github.com/dschoon/react-waves/issues) you encounter and I will try my best to get them fixed. 
+#### Issues
+Please report any [issues](https://github.com/dschoon/react-waves/issues) you encounter and I will try my best to get them fixed.
 
 
 ----
 
+## Examples
 ![ReactWaves](example/public/react-waves.jpg)
 
 Here's a basic demo and the example code include in this repo:
@@ -19,19 +24,24 @@ Here's a basic demo and the example code include in this repo:
 - **[Basic Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/BasicExample.js)**
 - **[Microphone Plugin Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/MicrophoneExample.js)**
 - **[Regions Plugin Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/RegionsExample.js)**
+- **[Timeline Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/TimelineExample.js)**
 - **[Large File Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/LargeFilePeaksExample.js)**
-- **[Generate PCM Data Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/GetPeaksExample.js)** 
+- **[Generate PCM Data Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/GetPeaksExample.js)**
+- **[Spectrogram Example](https://github.com/dschoon/react-waves/blob/master/example/src/components/SpectrogramExample.js)**
 
 Here's an example of the personal project where I'm using this code:
-- **[Clipps](https://clip.ps)** (coming soon)
-- **[Clipps Player Demo](https://dschoon.github.io/clipp-player)**
-- **[Clipps Player Example](https://github.com/dschoon/clipp-player)**
- 
+- **[Clipps](https://clip.ps)**
+- **[Clipps Player (Demo)](https://dschoon.github.io/clipp-player)**
+
 
 ## Install
 
 ```bash
-npm install --save @dschoon/react-waves
+npm install @dschoon/react-waves
+```
+or
+```bash
+yarn add @dschoon/react-waves
 ```
 
 ## Basic Example
@@ -151,11 +161,15 @@ props = {
       PropTypes.instanceOf(window.CanvasGradient)
     ]),
     xhr: PropTypes.object,
-  })
+  }),
+  spectrogramOptions: PropTypes.object,
+  timelineOptions: PropTypes.object,
 }
 
 ```
 
 ## License
 
-MIT © [Dan Schoonmaker](https://danielschoonmaker.com) [(github)](https://github.com/dschoon)
+MIT © [Dan Schoonmaker](https://schoon.me) [(github)](https://github.com/dschoon)
+
+_Last Updated: April 26th, 2020_

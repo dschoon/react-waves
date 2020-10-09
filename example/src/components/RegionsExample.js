@@ -3,14 +3,15 @@ import ReactWaves, { Regions } from '@dschoon/react-waves';
 
 import africa from '../audio/africa.mp3';
 
-
 export default class RegionsExample extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
+      wavesurfer: null,
       playing: false,
+      pos: 0,
       activeRegion: 'One',
       regions: {
         One: {
@@ -40,6 +41,31 @@ export default class RegionsExample extends React.Component {
     };
   }
 
+  onLoading = ({ wavesurfer, originalArgs=[] }) => {
+    this.setState({ loaded: originalArgs[0] === 100, wavesurfer });
+  };
+
+  onPosChange = (pos, wavesurfer) => {
+    if (pos !== this.state.pos) {
+      this.setState({ pos, wavesurfer });
+    }
+  };
+
+  secondsToPosition = (sec) => {
+    return 1 / this.state.wavesurfer.getDuration() * sec;
+  };
+
+  zoom = (direction) => {
+    const { wavesurfer } = this.state;
+    const currentZoom = wavesurfer.params.minPxPerSec;
+
+    if (direction === 'in') {
+      wavesurfer.zoom(currentZoom + 1);
+    } else if (direction === 'out' && currentZoom > 1) {
+      wavesurfer.zoom(currentZoom - 1);
+    }
+  };
+
   handleSingleRegionUpdate = (e) => {
     const newState = Object.assign(this.state, {
       regions: {
@@ -50,9 +76,13 @@ export default class RegionsExample extends React.Component {
   };
 
   handleRegionClick = (e) => {
-    this.setState({
-      activeRegion: e.originalArgs[0].id
-    });
+    setTimeout(() => {
+      this.state.wavesurfer.seekTo(this.secondsToPosition(e.originalArgs[0].start));
+    }, 50);
+  };
+
+  handleRegionDone = () => {
+    this.setState({ playing: false })
   };
 
   render () {
@@ -77,7 +107,10 @@ export default class RegionsExample extends React.Component {
           }}
           volume={1}
           zoom={1}
+          pos={this.state.pos}
           playing={this.state.playing}
+          onPosChange={this.onPosChange}
+          onLoading={this.onLoading}
         >
           <Regions
             onSingleRegionUpdate={this.handleSingleRegionUpdate}
@@ -89,7 +122,7 @@ export default class RegionsExample extends React.Component {
             onSingleRegionLeave={() => {}}
             onRegionClick={this.handleRegionClick}
             onRegionIn={() => {}}
-            onRegionOut={() => {}}
+            onRegionOut={this.handleRegionDone}
             onRegionRemove={() => {}}
             onRegionDblclick={() => {}}
             onRegionOver={() => {}}
@@ -97,6 +130,14 @@ export default class RegionsExample extends React.Component {
             regions={this.state.regions}
           />
         </ReactWaves>
+        <div className='zoom-buttons'>
+          <div className="zoom-in button" onClick={this.zoom.bind(this, 'in')}>
+            { '➕️' }
+          </div>
+          <div className="zoom-out button" onClick={this.zoom.bind(this, 'out')}>
+            { '➖️' }
+          </div>
+        </div>
       </div>
     )
   }
