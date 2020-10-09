@@ -64,6 +64,6 @@
     "dist"
   ],
   "dependencies": {
-    "wavesurfer.js": "^3.3.3"
+    "wavesurfer.js": "^4.1.1"
   }
 }

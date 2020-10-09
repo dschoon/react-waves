@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import Waveform from './components/Waveform';
-import { positiveIntegerProptype } from './utils/wavesurfer';
+import Waveform from "./components/Waveform";
+import { positiveIntegerProptype } from "./utils/wavesurfer";
 
-import styles from './styles.scss';
-
+import styles from "./styles.scss";
 
 export default class ReactWaves extends React.Component {
   constructor(props) {
@@ -18,12 +17,12 @@ export default class ReactWaves extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-     if (this.props.audioFile && nextProps.audioFile) {
-       this.setState({
-         pos: nextProps.pos,
-         duration: nextProps.duration,
-       })
-     }
+    if (this.props.audioFile && nextProps.audioFile) {
+      this.setState({
+        pos: nextProps.pos,
+        duration: nextProps.duration,
+      });
+    }
   }
 
   onPosChange = (e) => {
@@ -38,14 +37,19 @@ export default class ReactWaves extends React.Component {
     if (pos && pos !== this.state.pos) {
       this.setState({
         pos,
-        duration
+        duration,
       });
     }
   };
 
   render() {
     return (
-      <div className={ styles.reactWaves + (this.props.className ? ' ' + this.props.className : '') }>
+      <div
+        className={
+          styles.reactWaves +
+          (this.props.className ? " " + this.props.className : "")
+        }
+      >
         <Waveform
           {...this.props}
           pos={this.state.pos}
@@ -54,7 +58,7 @@ export default class ReactWaves extends React.Component {
           playing={this.props.playing}
         />
       </div>
-    )
+    );
   }
 }
 
@@ -65,7 +69,7 @@ ReactWaves.propTypes = {
     const prop = props[propName];
     if (
       prop &&
-      typeof prop !== 'string' &&
+      typeof prop !== "string" &&
       !(prop instanceof window.Blob) &&
       !(prop instanceof window.File)
     ) {
@@ -78,7 +82,7 @@ ReactWaves.propTypes = {
 
   mediaElt: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.instanceOf(window.HTMLElement)
+    PropTypes.instanceOf(window.HTMLElement),
   ]),
   audioPeaks: PropTypes.array,
   volume: PropTypes.number,
@@ -90,12 +94,16 @@ ReactWaves.propTypes = {
     audioContext: PropTypes.object,
     audioScriptProcessor: PropTypes.object,
     autoCenter: PropTypes.bool,
-    backend: PropTypes.oneOf(['WebAudio', 'MediaElement']),
+    backend: PropTypes.oneOf([
+      "WebAudio",
+      "MediaElement",
+      "MediaElementWebAudio",
+    ]),
     barGap: positiveIntegerProptype,
     barHeight: positiveIntegerProptype,
     barWidth: (props, propName, componentName) => {
       const prop = props[propName];
-      if (prop !== undefined && typeof prop !== 'number') {
+      if (prop !== undefined && typeof prop !== "number") {
         return new Error(`Invalid ${propName} supplied to ${componentName}
           expected either undefined or number`);
       }
@@ -113,7 +121,7 @@ ReactWaves.propTypes = {
     loopSelection: PropTypes.bool,
     maxCanvasWidth: positiveIntegerProptype,
     mediaControls: PropTypes.bool,
-    mediaType: PropTypes.oneOf(['audio', 'video']),
+    mediaType: PropTypes.oneOf(["audio", "video"]),
     minPxPerSec: positiveIntegerProptype,
     normalize: PropTypes.bool,
     partialRender: PropTypes.bool,
@@ -127,7 +135,7 @@ ReactWaves.propTypes = {
     splitChannels: PropTypes.bool,
     waveColor: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.instanceOf(window.CanvasGradient)
+      PropTypes.instanceOf(window.CanvasGradient),
     ]),
     xhr: PropTypes.object,
   }),
@@ -136,7 +144,7 @@ ReactWaves.propTypes = {
 };
 
 ReactWaves.defaultProps = {
-  audioFile: '',
+  audioFile: "",
   volume: 1,
   zoom: 1,
   options: {
@@ -145,13 +153,12 @@ ReactWaves.defaultProps = {
     cursorWidth: 0,
     height: 200,
     hideScrollbar: true,
-    progressColor: '#EC407A',
+    progressColor: "#EC407A",
     responsive: true,
-    waveColor: '#D1D6DA',
+    waveColor: "#D1D6DA",
   },
   pos: 0,
   playing: false,
 };
 
-
-export * from './components/Plugins/regions';
+export * from "./components/Plugins/regions";

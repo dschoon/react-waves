@@ -1,9 +1,9 @@
-import React from 'react';
-import WaveSurfer from 'wavesurfer.js';
-import Microphone from 'wavesurfer.js/src/plugin/microphone';
-import Regions from 'wavesurfer.js/src/plugin/regions';
-import Spectrogram from 'wavesurfer.js/src/plugin/spectrogram';
-import Timeline from '../Plugins/timeline';
+import React from "react";
+import WaveSurfer from "wavesurfer.js";
+import Microphone from "wavesurfer.js/src/plugin/microphone";
+import Regions from "wavesurfer.js/src/plugin/regions";
+import Spectrogram from "wavesurfer.js/src/plugin/spectrogram";
+import Timeline from "../Plugins/timeline";
 
 import {
   registerEvent,
@@ -11,101 +11,102 @@ import {
   loadMediaElt,
   capitalizeFirstLetter,
   seekTo,
-} from '../../utils/wavesurfer';
+} from "../../utils/wavesurfer";
 import { EVENT, EVENTS } from "../../models/Events";
-
 
 export default class Waveform extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isReady: false
+      isReady: false,
     };
 
     if (typeof WaveSurfer === undefined) {
-      throw new Error('WaveSurfer is undefined!');
+      throw new Error("WaveSurfer is undefined!");
     }
   }
 
   componentDidMount() {
     let { options, spectrogramOptions, timelineOptions } = this.props;
 
-    options.plugins = [
-      Regions.create(),
-    ];
+    options.plugins = [Regions.create()];
 
     if (this.props.micCallback) {
       options.plugins.push(Microphone.create());
     }
 
     if (spectrogramOptions) {
-      options.plugins.push(Spectrogram.create({
-        container: spectrogramOptions.container,
-        colorMap: spectrogramOptions.colorMap,
-        pixelRatio: spectrogramOptions.pixelRatio,
-        fftSamples: spectrogramOptions.fftSamples,
-        noverlap: spectrogramOptions.noverlap,
-        windowFunc: spectrogramOptions.windowFunc,
-        alpha: spectrogramOptions.alpha,
-        deferInit: spectrogramOptions.deferInit,
-        labels: spectrogramOptions.labels,
-      }));
+      options.plugins.push(
+        Spectrogram.create({
+          container: spectrogramOptions.container,
+          colorMap: spectrogramOptions.colorMap,
+          pixelRatio: spectrogramOptions.pixelRatio,
+          fftSamples: spectrogramOptions.fftSamples,
+          noverlap: spectrogramOptions.noverlap,
+          windowFunc: spectrogramOptions.windowFunc,
+          alpha: spectrogramOptions.alpha,
+          deferInit: spectrogramOptions.deferInit,
+          labels: spectrogramOptions.labels,
+        })
+      );
     }
 
     if (timelineOptions) {
-      options.plugins.push(Timeline.create({
-        container: timelineOptions.container,
-        pixelRatio: timelineOptions.pixelRatio,
-        zoomDebounce: timelineOptions.zoomDebounce,
-        height: timelineOptions.height || 50,
-        duration: timelineOptions.duration,
-        notchPercentHeight: timelineOptions.notchPercentHeight,
-        timeInterval: timelineOptions.timeInterval,
-        primaryLabelInterval: timelineOptions.primaryLabelInterval,
-        secondaryLabelInterval: timelineOptions.secondaryLabelInterval,
-        offset: timelineOptions.offset,
-        primaryColor: timelineOptions.primaryColor,
-        fontSize: timelineOptions.fontSize,
-        fontFamily: timelineOptions.fontFamily,
-        primaryFontColor: timelineOptions.primaryFontColor,
-        labelPadding: timelineOptions.labelPadding,
-        unlabeledNotchColor: timelineOptions.unlabeledNotchColor,
-      }));
+      options.plugins.push(
+        Timeline.create({
+          container: timelineOptions.container,
+          pixelRatio: timelineOptions.pixelRatio,
+          zoomDebounce: timelineOptions.zoomDebounce,
+          height: timelineOptions.height || 50,
+          duration: timelineOptions.duration,
+          notchPercentHeight: timelineOptions.notchPercentHeight,
+          timeInterval: timelineOptions.timeInterval,
+          primaryLabelInterval: timelineOptions.primaryLabelInterval,
+          secondaryLabelInterval: timelineOptions.secondaryLabelInterval,
+          offset: timelineOptions.offset,
+          primaryColor: timelineOptions.primaryColor,
+          fontSize: timelineOptions.fontSize,
+          fontFamily: timelineOptions.fontFamily,
+          primaryFontColor: timelineOptions.primaryFontColor,
+          labelPadding: timelineOptions.labelPadding,
+          unlabeledNotchColor: timelineOptions.unlabeledNotchColor,
+        })
+      );
     }
 
     this._wavesurfer = WaveSurfer.create({
       ...options,
-      container: this.wavesurferEl
+      container: this.wavesurferEl,
     });
 
     if (this.props.micCallback) {
-      this._wavesurfer.microphone.on('deviceReady', (stream) => {
+      this._wavesurfer.microphone.on("deviceReady", (stream) => {
         this.props.micCallback({ stream });
       });
-      this._wavesurfer.microphone.on('deviceError', (error) => {
+      this._wavesurfer.microphone.on("deviceError", (error) => {
         this.props.micCallback({ error });
       });
 
       this.props.micCallback({ micInstance: this._wavesurfer.microphone });
     }
 
-    registerEvent(this._wavesurfer, EVENT.AUDIO_PROCESS, pos => {
+    registerEvent(this._wavesurfer, EVENT.AUDIO_PROCESS, (pos) => {
       if (Math.ceil(pos) !== Math.ceil(this.props.pos)) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
-          originalArgs: [pos]
+          originalArgs: [pos],
         });
       }
     });
 
-    registerEvent(this._wavesurfer, EVENT.SEEK, pos => {
+    registerEvent(this._wavesurfer, EVENT.SEEK, (pos) => {
       let duration = this._wavesurfer.getDuration();
 
       if (Math.ceil(duration * pos) !== Math.ceil(this.props.pos)) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
-          originalArgs: [pos]
+          originalArgs: [pos],
         });
       }
     });
@@ -131,14 +132,14 @@ export default class Waveform extends React.Component {
       this._wavesurfer.zoom(this.props.zoom);
     });
 
-    EVENTS.forEach(event => {
+    EVENTS.forEach((event) => {
       const capLetter = capitalizeFirstLetter(event);
-      const propCallback = this.props['on' + capLetter];
+      const propCallback = this.props["on" + capLetter];
       if (propCallback) {
         registerEvent(this._wavesurfer, event, (...originalArgs) => {
           propCallback({
             wavesurfer: this._wavesurfer,
-            originalArgs
+            originalArgs,
           });
         });
       }
@@ -151,7 +152,11 @@ export default class Waveform extends React.Component {
 
     // if mediaElt prop, load media Element
     if (this.props.mediaElt) {
-      loadMediaElt(this._wavesurfer, this.props.mediaElt, this.props.audioPeaks);
+      loadMediaElt(
+        this._wavesurfer,
+        this.props.mediaElt,
+        this.props.audioPeaks
+      );
     }
   }
 
@@ -171,7 +176,11 @@ export default class Waveform extends React.Component {
     // update peaks
     if (this.props.audioPeaks !== nextProps.audioPeaks) {
       if (nextProps.mediaElt) {
-        loadMediaElt(this._wavesurfer, nextProps.mediaElt, nextProps.audioPeaks);
+        loadMediaElt(
+          this._wavesurfer,
+          nextProps.mediaElt,
+          nextProps.audioPeaks
+        );
       } else {
         loadAudio(this._wavesurfer, nextProps.audioFile, nextProps.audioPeaks);
       }
@@ -200,6 +209,9 @@ export default class Waveform extends React.Component {
   }
 
   componentWillUnmount() {
+    // Clear buffer
+    delete this._wavesurfer.backend.buffer;
+
     // unsubscribe all listeners
     this._wavesurfer.unAll();
 
@@ -209,23 +221,23 @@ export default class Waveform extends React.Component {
 
   render() {
     const childrenWithProps = this.props.children
-      ? React.Children.map(this.props.children, child =>
-        React.cloneElement(child, {
-          wavesurfer: this._wavesurfer,
-          isReady: this.state.isReady
-        })
-      )
+      ? React.Children.map(this.props.children, (child) =>
+          React.cloneElement(child, {
+            wavesurfer: this._wavesurfer,
+            isReady: this.state.isReady,
+          })
+        )
       : false;
 
     return (
-      <div className='waveform'>
+      <div className="waveform">
         <div
-          className='wave'
-          ref={c => {
+          className="wave"
+          ref={(c) => {
             this.wavesurferEl = c;
           }}
         />
-        { this._wavesurfer && this.state.isReady && childrenWithProps }
+        {this._wavesurfer && this.state.isReady && childrenWithProps}
       </div>
     );
   }
