@@ -13,10 +13,11 @@ export default class GetPeaksExample extends React.Component {
   }
 
   onWaveformReady = ({ wavesurfer }) => {
-    let exportPCM = wavesurfer.exportPCM(null, 1000, true, null);
-    if (exportPCM) {
-      this.setState({ audioPeaks: exportPCM });
-    }
+    wavesurfer.exportPCM(null, 1000, true, null).then(exportPCM => {
+      if (exportPCM) {
+        this.setState({ audioPeaks: exportPCM });
+      }
+    });
   };
 
   clickToCopy = () => {
