@@ -5,20 +5,18 @@ object-assign
 */
 
 /*!
-   * wavesurfer.js 3.3.3 (2020-04-16)
-   * https://github.com/katspaugh/wavesurfer.js
+   * wavesurfer.js 4.1.1 (2020-09-25)
+   * https://wavesurfer-js.org
    * @license BSD-3-Clause
    */
 
-/*! ./ajax */
+/*! ./clamp */
 
 /*! ./drawer */
 
 /*! ./drawer.canvasentry */
 
 /*! ./drawer.multicanvas */
-
-/*! ./extend */
 
 /*! ./fetch */
 
@@ -76,9 +74,9 @@ object-assign
           !*** ./src/peakcache.js ***!
           \**************************/
 
-/*!**************************!*\
-          !*** ./src/util/ajax.js ***!
-          \**************************/
+/*!***************************!*\
+          !*** ./src/util/clamp.js ***!
+          \***************************/
 
 /*!***************************!*\
           !*** ./src/util/fetch.js ***!
@@ -99,10 +97,6 @@ object-assign
 /*!***************************!*\
           !*** ./src/wavesurfer.js ***!
           \***************************/
-
-/*!****************************!*\
-          !*** ./src/util/extend.js ***!
-          \****************************/
 
 /*!****************************!*\
           !*** ./src/util/get-id.js ***!
@@ -140,7 +134,7 @@ object-assign
           !*** ./src/util/request-animation-frame.js ***!
           \*********************************************/
 
-/** @license React v0.19.1
+/** @license React v0.20.1
  * scheduler.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -149,7 +143,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.13.1
+/** @license React v17.0.1
  * react-dom.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -158,7 +152,16 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.13.1
+/** @license React v17.0.1
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.1
  * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
