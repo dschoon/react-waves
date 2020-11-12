@@ -8,9 +8,9 @@ React component wrapper for [Wavesurfer.js](http://wavesurfer-js.org)
 
 This component was originally based off of the work done in [react-wavesurfer](https://github.com/mspae/react-wavesurfer) by [@mspae](https://github.com/mspae) (and [others](<(https://github.com/mspae/react-wavesurfer/graphs/contributors)>)). After wavesurfer-js released version 2, and the react-wavesurfer projected became unmaintained, I decided that it was safer to start my own version that I had better control over.
 
-#### Version 3
+#### Version 4.x
 
-To align this component nicer with the base [wavesurfer.js](https://github.com/katspaugh/wavesurfer.js) project, I've decided to skip version 2 and go straight to version 3.
+To align this component nicer with the base [wavesurfer.js](https://github.com/katspaugh/wavesurfer.js) project, I decided to skip version 2 and go straight to version 3. With wavesurfer now on version 4, we have made the necessary updates and are now also on v4.
 
 #### Issues
 
@@ -35,7 +35,7 @@ Here's a basic demo and the example code include in this repo:
 
 Here's an example of the personal project where I'm using this code:
 
-- **[Clipps](https://clip.ps)**
+- **[Casts.co](https://pod.casts.co)** (formerly Clipps)
 - **[Clipps Player (Demo)](https://dschoon.github.io/clipp-player)**
 
 ## Install
@@ -185,4 +185,4 @@ props = {
 
 MIT © [Dan Schoonmaker](https://schoon.me) [(github)](https://github.com/dschoon)
 
-_Last Updated: April 26th, 2020_
+_Last Updated: November 11th, 2020_

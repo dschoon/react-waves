@@ -160,51 +160,51 @@ export default class Waveform extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // update audioFile
-    if (prevProps.audioFile !== this.props.audioFile) {
+    if (this.props.audioFile !== nextProps.audioFile) {
       this.setState({ isReady: false });
-      loadAudio(this._wavesurfer, this.props.audioFile, this.props.audioPeaks);
+      loadAudio(this._wavesurfer, nextProps.audioFile, nextProps.audioPeaks);
     }
 
     // update mediaElt
-    if (prevProps.mediaElt !== this.props.mediaElt) {
+    if (this.props.mediaElt !== nextProps.mediaElt) {
       this.setState({ isReady: false });
-      loadMediaElt(this._wavesurfer, this.props.mediaElt, this.props.audioPeaks);
+      loadMediaElt(this._wavesurfer, nextProps.mediaElt, nextProps.audioPeaks);
     }
 
     // update peaks
-    if (prevProps.audioPeaks !== this.props.audioPeaks) {
-      if (this.props.mediaElt) {
+    if (this.props.audioPeaks !== nextProps.audioPeaks) {
+      if (nextProps.mediaElt) {
         loadMediaElt(
           this._wavesurfer,
-          this.props.mediaElt,
-          this.props.audioPeaks
+          nextProps.mediaElt,
+          nextProps.audioPeaks
         );
       } else {
-        loadAudio(this._wavesurfer, this.props.audioFile, this.props.audioPeaks);
+        loadAudio(this._wavesurfer, nextProps.audioFile, nextProps.audioPeaks);
       }
     }
 
-    if (this.props.playing) {
+    if (nextProps.playing) {
       this._wavesurfer.play();
     } else {
       this._wavesurfer.pause();
     }
 
     // update volume
-    if (prevProps.volume !== this.props.volume) {
-      this._wavesurfer.setVolume(this.props.volume);
+    if (this.props.volume !== nextProps.volume) {
+      this._wavesurfer.setVolume(nextProps.volume);
     }
 
     // update zoom
-    if (prevProps.zoom !== this.props.zoom) {
-      this._wavesurfer.zoom(this.props.zoom);
+    if (this.props.zoom !== nextProps.zoom) {
+      this._wavesurfer.zoom(nextProps.zoom);
     }
 
     // update audioRate
-    if (prevProps.options.audioRate !== this.props.options.audioRate) {
-      this._wavesurfer.setPlaybackRate(this.props.options.audioRate);
+    if (this.props.options.audioRate !== nextProps.options.audioRate) {
+      this._wavesurfer.setPlaybackRate(nextProps.options.audioRate);
     }
   }
 

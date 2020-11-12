@@ -15,7 +15,7 @@ export class Regions extends React.Component {
     this.props.wavesurfer.on('ready', this._init.bind(this));
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // only update if the wavesurfer instance has been ready
     if (!this.props.isReady) {
       return;
@@ -26,16 +26,16 @@ export class Regions extends React.Component {
     let newRegionId;
     let oldRegionId;
 
-    for (newRegionId in this.props.regions) {
-      if ({}.hasOwnProperty.call(this.props.regions, newRegionId)) {
-        const newRegion = this.props.regions[newRegionId];
+    for (newRegionId in nextProps.regions) {
+      if ({}.hasOwnProperty.call(nextProps.regions, newRegionId)) {
+        const newRegion = nextProps.regions[newRegionId];
 
         // remove from oldRegions
         delete oldRegions[newRegionId];
 
         // new regions
-        if (!this.props.wavesurfer.regions.list[newRegionId] && this.props.wavesurfer && this.props.wavesurfer.addRegion) {
-          this._hookUpRegionEvents(this.props.wavesurfer.addRegion(newRegion));
+        if (!this.props.wavesurfer.regions.list[newRegionId] && nextProps.wavesurfer && nextProps.wavesurfer.addRegion) {
+          this._hookUpRegionEvents(nextProps.wavesurfer.addRegion(newRegion));
 
           // update regions
         } else if (
@@ -43,7 +43,7 @@ export class Regions extends React.Component {
           (oldRegions[newRegionId].start !== newRegion.start ||
             oldRegions[newRegionId].end !== newRegion.end)
         ) {
-          this.props.wavesurfer.regions.list[newRegionId].update({
+          nextProps.wavesurfer.regions.list[newRegionId].update({
             start: newRegion.start,
             end: newRegion.end
           });
@@ -54,7 +54,7 @@ export class Regions extends React.Component {
     // remove any old regions
     for (oldRegionId in oldRegions) {
       if ({}.hasOwnProperty.call(oldRegions, oldRegionId)) {
-        this.props.wavesurfer.regions.list[oldRegionId].remove();
+        nextProps.wavesurfer.regions.list[oldRegionId].remove();
       }
     }
   }
