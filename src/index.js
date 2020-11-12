@@ -162,3 +162,4 @@ ReactWaves.defaultProps = {
 };
 
 export * from "./components/Plugins/regions";
+export * from "./models/IReactWaves.ts";
