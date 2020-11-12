@@ -111,9 +111,10 @@ export default class RegionsExample extends React.Component {
           audioFile={africa}
           className={'react-waves'}
           options={{
-            barGap: 2,
-            barWidth: 1.8,
+            barGap: 3,
+            barWidth: 4,
             barHeight: 2,
+            barRadius: 3,
             cursorWidth: 0,
             height: 200,
             hideScrollbar: true,

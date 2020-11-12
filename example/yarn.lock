@@ -1294,10 +1294,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@dschoon/react-waves@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@dschoon/react-waves/-/react-waves-4.0.1.tgz#3307bd94a9b3f88815a83445bc67d040f557f1da"
-  integrity sha512-ZE5f27IVTUUTZDtVaYwxekECd+RPw/lxiShkwi+reO+Bl4k3Eobmn5cyRtvVfGei2IeAYf88mXDdll05FAT89g==
+"@dschoon/react-waves@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@dschoon/react-waves/-/react-waves-4.0.2.tgz#cc573d026417ee142289189ba072cb686d6c68f6"
+  integrity sha512-yfspCQd7TcrF7gB2cvLLzHY0EzQefaw+Lhe5+aYcVNBjmAKYRQjvhwBERaNA2Gl1hu0MloT51zDKK/2PXVHkMg==
   dependencies:
     "@types/jest" "^26.0.15"
     "@types/node" "^14.14.7"

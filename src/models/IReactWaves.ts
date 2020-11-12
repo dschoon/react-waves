@@ -19,6 +19,7 @@ export interface IReactWaves {
     backend?: "WebAudio" | "MediaElement" | "MediaElementWebAudio";
     barGap?: number;
     barHeight?: number;
+    barRadius?: number;
     barWidth?: (
       props: object,
       propName: string,

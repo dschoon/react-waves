@@ -138,6 +138,7 @@ props = {
     ]),
     barGap: positiveIntegerProptype,
     barHeight: positiveIntegerProptype,
+    barRadius: positiveIntegerProptype,
     barWidth: (props, propName, componentName) => {
       const prop = props[propName];
       if (prop !== undefined && typeof prop !== "number") {
