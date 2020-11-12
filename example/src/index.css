@@ -41,6 +41,29 @@ body {
 .zoom-out {
   left: 70px;
 }
+.remove-region-1 {
+  left: 130px;
+  font-size: 15px;
+  margin-top: 5px;
+}
+.remove-region-1 span {
+  font-size: 14px;
+  margin-left: 5px;
+}
+.remove-region-2 {
+  left: 180px;
+  font-size: 15px;
+  margin-top: 5px;
+}
+.remove-region-2 span {
+  font-size: 14px;
+  margin-left: 5px;
+}
+.reset {
+  left: 260px;
+  font-size: 15px;
+  margin-top: 8px;
+}
 
 #audioPeaks {
   width: 800px;

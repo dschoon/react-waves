@@ -1,6 +1,6 @@
 {
   "name": "@dschoon/react-waves",
-  "version": "3.0.3",
+  "version": "4.0.0",
   "description": "React component wrapper for wavesurfer.js",
   "author": "dschoon",
   "license": "MIT",
@@ -38,8 +38,8 @@
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
     "@svgr/rollup": "^5.3.1",
@@ -58,7 +58,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-url": "^1.4.0",
-    "webpack": "4.42.0"
+    "webpack": "4.44.2"
   },
   "files": [
     "dist"

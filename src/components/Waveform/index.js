@@ -160,7 +160,7 @@ export default class Waveform extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // update audioFile
     if (this.props.audioFile !== nextProps.audioFile) {
       this.setState({ isReady: false });

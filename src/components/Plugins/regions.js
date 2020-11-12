@@ -15,7 +15,7 @@ export class Regions extends React.Component {
     this.props.wavesurfer.on('ready', this._init.bind(this));
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // only update if the wavesurfer instance has been ready
     if (!this.props.isReady) {
       return;

@@ -16,7 +16,7 @@ export default class ReactWaves extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (this.props.audioFile && nextProps.audioFile) {
       this.setState({
         pos: nextProps.pos,

@@ -66,6 +66,22 @@ export default class RegionsExample extends React.Component {
     }
   };
 
+  removeRegion = (name) => {
+    if (this.state.wavesurfer.regions.list[name]) {
+      this.state.wavesurfer.regions.list[name].remove();
+    }
+  };
+  resetRegions = () => {
+    // Only reset region "One" if it does not exist
+    if (!this.state.wavesurfer.regions.list.One) {
+      this.state.wavesurfer.addRegion({ id: 'One', start: 40, end: 60, color: 'rgba(100, 149, 240, 0.3)' });
+    }
+    // Only reset region "Two" if it does not exist
+    if (!this.state.wavesurfer.regions.list.Two) {
+      this.state.wavesurfer.addRegion({ id: 'Two', start: 75, end: 100, color: 'rgba(100, 149, 240, 0.3)' });
+    }
+  };
+
   handleSingleRegionUpdate = (e) => {
     const newState = Object.assign(this.state, {
       regions: {
@@ -132,10 +148,19 @@ export default class RegionsExample extends React.Component {
         </ReactWaves>
         <div className='zoom-buttons'>
           <div className="zoom-in button" onClick={this.zoom.bind(this, 'in')}>
-            { '➕️' }
+            ➕️
           </div>
           <div className="zoom-out button" onClick={this.zoom.bind(this, 'out')}>
-            { '➖️' }
+            ➖️
+          </div>
+          <div className="remove-region-1 button" onClick={this.removeRegion.bind(this, 'One')}>
+            🛑 <span>1</span>
+          </div>
+          <div className="remove-region-2 button" onClick={this.removeRegion.bind(this, 'Two')}>
+            🛑 <span>2</span>
+          </div>
+          <div className="reset button" onClick={this.resetRegions}>
+            Reset
           </div>
         </div>
       </div>
