@@ -106,7 +106,7 @@ export default class Waveform extends React.Component {
       if (Math.ceil(duration * pos) !== Math.ceil(this.props.pos)) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
-          originalArgs: [pos],
+          originalArgs: [duration * pos],
         });
       }
     });
