@@ -36,7 +36,7 @@ export type ReactWavesProps = {
     barGap?: number;
     barHeight?: number;
     barRadius?: number;
-    barWidth?: (props: object, propName: string, componentName: string) => void;
+    barWidth?: number;
     closeAudioContext?: boolean;
     cursorColor?: string;
     cursorWidth?: number;
