@@ -1,11 +1,27 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactElement } from "react";
 
-export interface IReactWaves {
+export type Region = {
+  id?: string;
+  start?: number;
+  end?: number;
+  loop?: boolean;
+  drag?: boolean;
+  resize?: boolean;
+  color?: string;
+};
+
+export type RegionProps = {
+  regions: Region[];
+};
+
+export declare function Regions(props: RegionProps): ReactElement | null;
+
+export type ReactWavesProps = {
   style?: CSSProperties;
   className?: string;
   playing?: boolean;
   pos?: number;
-  audioFile?: (props: object, propName: string, componentName: string) => void;
+  audioFile?: File | Blob | string;
   mediaElt?: string | HTMLElement;
   audioPeaks?: number[];
   volume?: number;
@@ -20,11 +36,7 @@ export interface IReactWaves {
     barGap?: number;
     barHeight?: number;
     barRadius?: number;
-    barWidth?: (
-      props: object,
-      propName: string,
-      componentName: string
-    ) => void;
+    barWidth?: (props: object, propName: string, componentName: string) => void;
     closeAudioContext?: boolean;
     cursorColor?: string;
     cursorWidth?: number;
@@ -53,4 +65,9 @@ export interface IReactWaves {
   };
   spectrogramOptions?: object;
   timelineOptions?: object;
-}
+  children?: ReactNode;
+};
+
+declare function ReactWaves(props: ReactWavesProps): ReactElement;
+
+export default ReactWaves;
