@@ -64,7 +64,24 @@ export type ReactWavesProps = {
     xhr?: object;
   };
   spectrogramOptions?: object;
-  timelineOptions?: object;
+  timelineOptions?: {
+    container?: string | HTMLElement;
+    pixelRatio?: number;
+    zoomDebounce?: number;
+    height?: number;
+    duration?: number;
+    notchPercentHeight?: number;
+    timeInterval?: (pixels: number) => number;
+    primaryLabelInterval?: (pixels: number) => number;
+    secondaryLabelInterval?: (pixels: number) => number;
+    offset?: number;
+    primaryColor?: string;
+    fontSize?: string;
+    fontFamily?: string;
+    primaryFontColor?: string;
+    labelPadding?: number;
+    unlabeledNotchColor?: string;
+  };
   children?: ReactNode;
 };
 
