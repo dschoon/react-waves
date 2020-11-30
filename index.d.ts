@@ -1,11 +1,27 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactElement } from "react";
 
-export interface IReactWaves {
+export type Region = {
+  id?: string;
+  start?: number;
+  end?: number;
+  loop?: boolean;
+  drag?: boolean;
+  resize?: boolean;
+  color?: string;
+};
+
+export type RegionProps = {
+  regions: Region[];
+};
+
+export declare function Regions(props: RegionProps): ReactElement | null;
+
+export type ReactWavesProps = {
   style?: CSSProperties;
   className?: string;
   playing?: boolean;
   pos?: number;
-  audioFile?: (props: object, propName: string, componentName: string) => void;
+  audioFile?: File | Blob | string;
   mediaElt?: string | HTMLElement;
   audioPeaks?: number[];
   volume?: number;
@@ -20,11 +36,7 @@ export interface IReactWaves {
     barGap?: number;
     barHeight?: number;
     barRadius?: number;
-    barWidth?: (
-      props: object,
-      propName: string,
-      componentName: string
-    ) => void;
+    barWidth?: number;
     closeAudioContext?: boolean;
     cursorColor?: string;
     cursorWidth?: number;
@@ -52,5 +64,27 @@ export interface IReactWaves {
     xhr?: object;
   };
   spectrogramOptions?: object;
-  timelineOptions?: object;
-}
+  timelineOptions?: {
+    container?: string | HTMLElement;
+    pixelRatio?: number;
+    zoomDebounce?: number;
+    height?: number;
+    duration?: number;
+    notchPercentHeight?: number;
+    timeInterval?: (pixels: number) => number;
+    primaryLabelInterval?: (pixels: number) => number;
+    secondaryLabelInterval?: (pixels: number) => number;
+    offset?: number;
+    primaryColor?: string;
+    fontSize?: string;
+    fontFamily?: string;
+    primaryFontColor?: string;
+    labelPadding?: number;
+    unlabeledNotchColor?: string;
+  };
+  children?: ReactNode;
+};
+
+declare function ReactWaves(props: ReactWavesProps): ReactElement;
+
+export default ReactWaves;
