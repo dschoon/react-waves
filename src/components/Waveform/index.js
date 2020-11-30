@@ -95,7 +95,7 @@ export default class Waveform extends React.Component {
       if (Math.ceil(pos) !== Math.ceil(this.props.pos)) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
-          originalArgs: [pos],
+          originalArgs: [Math.ceil(pos)],
         });
       }
     });
@@ -106,7 +106,7 @@ export default class Waveform extends React.Component {
       if (Math.ceil(duration * pos) !== Math.ceil(this.props.pos)) {
         this.props.onPosChange({
           wavesurfer: this._wavesurfer,
-          originalArgs: [pos],
+          originalArgs: [Math.ceil(duration * pos)],
         });
       }
     });
@@ -137,10 +137,18 @@ export default class Waveform extends React.Component {
       const propCallback = this.props["on" + capLetter];
       if (propCallback) {
         registerEvent(this._wavesurfer, event, (...originalArgs) => {
-          propCallback({
-            wavesurfer: this._wavesurfer,
-            originalArgs,
-          });
+          if (event === EVENT.SEEK) {
+            let duration = this._wavesurfer.getDuration();
+            propCallback({
+              wavesurfer: this._wavesurfer,
+              pos: Math.ceil(duration * originalArgs),
+            });
+          } else {
+            propCallback({
+              wavesurfer: this._wavesurfer,
+              ...originalArgs,
+            });
+          }
         });
       }
     });
@@ -222,11 +230,11 @@ export default class Waveform extends React.Component {
   render() {
     const childrenWithProps = this.props.children
       ? React.Children.map(this.props.children, (child) =>
-          React.cloneElement(child, {
-            wavesurfer: this._wavesurfer,
-            isReady: this.state.isReady,
-          })
-        )
+        React.cloneElement(child, {
+          wavesurfer: this._wavesurfer,
+          isReady: this.state.isReady,
+        })
+      )
       : false;
 
     return (

@@ -21,6 +21,10 @@ export default class SkipExample extends React.Component {
     }
   };
 
+  onSeek = ({ pos, wavesurfer }) => {
+    console.log(pos);
+  }
+
   skipAhead = () => {
     this.state.wavesurfer.seekTo(this.secondsToPosition(this.state.pos + 10));
   };
@@ -63,6 +67,7 @@ export default class SkipExample extends React.Component {
           playing={this.state.playing}
           pos={this.state.pos}
           onPosChange={this.onPosChange}
+          onSeek={this.onSeek}
         />
       </div>
     )
