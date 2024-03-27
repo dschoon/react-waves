@@ -111,6 +111,13 @@ export default class Waveform extends React.Component {
       }
     });
 
+    registerEvent(this._wavesurfer, EVENT.FINISH, () => {
+        // Call a callback function provided via props if it exists
+        if (this.props.onFinish) {
+          this.props.onFinish();
+        }
+    });
+
     // file was loaded, wave was drawn
     registerEvent(this._wavesurfer, EVENT.READY, () => {
       this.setState({ isReady: true });

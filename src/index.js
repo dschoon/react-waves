@@ -56,6 +56,7 @@ export default class ReactWaves extends React.Component {
           duration={this.state.duration}
           onPosChange={this.onPosChange}
           playing={this.props.playing}
+          onFinish={this.props.onFinish}
         />
       </div>
     );
@@ -88,6 +89,7 @@ ReactWaves.propTypes = {
   volume: PropTypes.number,
   zoom: PropTypes.number,
   onPosChange: PropTypes.func,
+  onFinish: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
   options: PropTypes.shape({
     audioRate: PropTypes.number,
@@ -160,6 +162,7 @@ ReactWaves.defaultProps = {
   },
   pos: 0,
   playing: false,
+  onFinish: () => {},
 };
 
 export * from "./components/Plugins/regions";
